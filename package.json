@@ -1,7 +1,7 @@
 {
   "name": "project-kasa",
   "version": "0.1.0",
-  "homepage": "https://Zabidat.github.io/Projet-Kasa-React",
+  "homepage": "https://zabidat.github.io/Projet-Kasa-React",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
