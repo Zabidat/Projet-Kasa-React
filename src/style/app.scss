@@ -1,0 +1,14 @@
+/*Import global de nos modules pour chaque composants */
+
+@import "./Utils/variables";
+@import "./Utils/mixins";
+@import "../style/Base/base"; 
+
+@import "../components/Header/Header";
+@import "../components/pages/Home/Home"; 
+@import "../components/pages/About/About";
+@import "../components/pages/Logement/Fiche";
+@import "../components/pages/ErrorPage/Error404"; 
+
+@import "../components/Footer/Footer"; 
+

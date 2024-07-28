@@ -1,0 +1,51 @@
+.error-property
+{
+    color: $primary-color;
+    @extend %flex-column;
+    margin: 22px 22px;
+
+    &_number 
+    {
+        @include flex-center;
+	    @include font(96px, 700);
+	    margin: 12rem 0 1rem 0;
+
+	    @media screen and (min-width: $breakpoint-desktop) {
+		    @include font(288px, 700);
+		    margin: 0;
+	    }
+    }
+
+    &_text
+    {
+        @extend %flex-end;
+        text-align: center;
+        @include font(18px, 500);
+        margin: 0 11%;
+    
+        @media screen and (min-width: $breakpoint-desktop) {
+          @include font(36px, 500);
+          margin: 0;
+        } 
+    }
+
+    &_link 
+    {
+        @extend %flex-end;
+        color: $primary-color;
+        @include font(14px, 500);
+        margin: 3rem 0 2rem 0;
+    
+        @media screen and (min-width: $breakpoint-desktop) {
+          @include font(18px, 500);
+          margin-top: 7rem;
+        }
+    
+        &:hover,
+        &:focus {
+          text-decoration-line: underline;
+        } 
+    }
+
+
+}
