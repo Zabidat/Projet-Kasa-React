@@ -1,4 +1,4 @@
-/* Ce fichier va sauvegarder toutes nos variables a l'intérieur*/ 
+/* Ce fichier va sauvegarder toutes nos variables à l'intérieur*/ 
 
 $primary-color: #ff6060;   // on a crée une variable primary-color qui prend la couleur orange
 $secondary-color: #f7f7f7;
@@ -16,11 +16,11 @@ $banner-background: $background-color url();
 $breakpoints: (
   small: 320px,
   medium: 768px,
-  large: 1024px,
+  large: 992px,
   xlarge: 1440px,
 );
 
 $breakpoint-desktop: 769px;
 
 $wmin: 320px;
-$wmax: 1440px; 
+$wmax: 769px; 

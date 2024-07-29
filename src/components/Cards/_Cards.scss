@@ -1,0 +1,89 @@
+.card {
+
+    width: 100%;
+    height: 255px;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    animation: fadeInUp 600ms ease-in-out;
+    overflow: hidden; 
+
+    &_img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        border-radius: inherit;
+        transform: scale(1);
+        transition: transform 300ms;
+    } 
+
+    &_title {
+        position: absolute;
+        bottom: 0;
+        @include font(18px, 500);
+        margin: 15px 20px;
+        color: $tertiary-color;
+        box-sizing: inherit; 
+    }
+
+    &_overlay {
+        position: absolute;
+        top: 0;
+        @include boxShadow;
+        height: 100%;
+        width: 100%;
+        border-radius: inherit;
+    }   
+
+    &:hover {
+        > .card_img {
+          transform: scale(1.01);
+        }
+    }
+    
+}
+
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+} 
+
+.Card-Container {
+
+    @include media-query(medium) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 40px;
+        row-gap: 20px;
+        margin-top: 40px;
+      }
+  
+      @include media-query(large) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 50px;
+        row-gap: 30px;
+        background: $secondary-color;
+        padding: 50px;
+        border-radius: 25px;
+        margin-bottom: 40px;
+      }
+
+      @include media-query(xlarge) {
+        row-gap: 40px;
+        column-gap: 60px;
+    }
+     
+}
+
+.link-cardLogement {
+    text-decoration: none; 
+}
+

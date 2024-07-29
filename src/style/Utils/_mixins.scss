@@ -4,8 +4,8 @@
     margin: auto; 
 }
 
-@mixin box-shadow {
-    background: box-shadow(rgba(255, 255, 255, 0) 0%, #00000080); 
+@mixin boxShadow {
+    background: boxShadow(rgba(255, 255, 255, 0) 0%, #00000080); 
 }
 
 @mixin font-right($size) {
@@ -39,7 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: center; 
 }
 
 @mixin flex-column {
@@ -54,6 +54,21 @@
     justify-content: flex-end;
 }
 
+@mixin flex-banner {
+    position: relative;
+    @include flex-center;
+    width: 100%;
+    @include bkgrd($banner-background);
+    margin-top: 20px;
+} 
+
+@mixin small-radius {
+    border-radius: 10px;
+}
+
+@mixin big-radius {
+    border-radius: 25px;
+} 
 
 @mixin media-query($key) {
     $size: map-get($breakpoints, $key);
