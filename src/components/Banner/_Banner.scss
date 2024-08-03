@@ -4,20 +4,32 @@
     height: 111px;
     margin-bottom: 35px;
     position: relative;
-
-    
+ 
     @media screen and (min-width: $breakpoint-desktop) {
       border-radius: 25px;
       height: 223px;
+      @include flex-banner; 
     }
     
      
 
-    &_img{
+    &_imgHome{
         border-radius: 25px;
         height: 100%; 
         object-fit: cover;
         width: 100%;
+        // Ajout de l'ombre sur l'image Home
+        box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.2);
+        // Diminue la luminosité 
+        filter: brightness(0.5);
+    }
+    &_imgP{
+        border-radius: 25px;
+        height: 100%; 
+        object-fit: cover;
+        width: 100%;
+        // Diminue la luminosité 
+        filter: brightness(1);
     }
 
     &_sombre {
@@ -37,22 +49,22 @@
         left: 5.6%;
         right: 32.53%;
         bottom: 80.05%;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 500;
         line-height: 100%;
         color: $tertiary-color; 
         width: 217px;
         height: 48px; 
-        // text-align: center;
+        @include small-radius;  
 
-        
         @media screen and (min-width: $breakpoint-desktop) {
-        top: 0;
-        left: 0;
-        right: 0; 
-        @include flex-center;
-        @include WH-full;
-        @include font(48px, 500);
+            top: 0;
+            left: 0;
+            right: 0; 
+            @include flex-center;
+            @include WH-full;
+            @include font(48px, 500);
+            @include big-radius; 
         }
          
         

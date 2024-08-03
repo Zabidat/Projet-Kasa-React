@@ -1,14 +1,16 @@
 .header-property {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5%;
+    justify-content: space-between; 
+    align-items: center;  
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding: 0px 50px; 
 
   /* @media screen and (min-width: $breakpoint-desktop) {
     margin: 40px 100px 49px 100px;
-  }
+  } */  
 
-  &__figure {
+  &_figure {
         display: flex;
         align-items: flex-start;
         margin: 0;
@@ -19,10 +21,10 @@
         }
 
         img {
-        width: 100%;
-        }
+            width: 100%; 
+            height: 48px;
+        } 
     } 
-    */ 
 
 }
 
@@ -31,28 +33,34 @@
     @include flex-end;
 	text-transform: uppercase;
 
-    /*
 	@media screen and (min-width: $breakpoint-desktop) {
 		text-transform: none;
 	}
-    */ 
+    
 
     &_link-home,
 	&_link-about {
+
 		@include font-right(12px);
 		color: $footer-color;
 		text-decoration: none;
 		padding-left: 0.8rem;
 
-		/*@media screen and (min-width: $breakpoint-desktop) {
+		@media screen and (min-width: $breakpoint-desktop) {
 			@include font-right(24px);
 			padding-left: 3.5rem;
-		} */  
+		}   
 
         // &:hover et focus nous permet d'accéder au pseudosélecteur du survol de la souris et l'élément qui a le focus(sélectionner).
 		&:hover,
 		&:focus {
 			text-decoration-line: underline;
 		}
+
+        @media (max-width: 410px) {
+            width: 70px;
+            font-size: 10px; 
+        }
+
 	} 
 }

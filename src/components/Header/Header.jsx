@@ -6,7 +6,7 @@ function Header(){
         <header className="header-property">
            
             <figure className="header-property_figure">
-                <img src={logo} alt="Logo de l'agence kasa" className="logo" />
+                <img src={logo} alt="Logo de l'agence kasa" className="header-property_logo" />
             </figure>
            
            <nav className="nav-header">

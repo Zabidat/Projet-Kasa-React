@@ -1,20 +1,23 @@
 import React from "react";
 import "./style/app.scss"; 
 import {BrowserRouter, Routes, Route} from "react-router-dom"; 
-//import Header from "./components/Header/Header"; 
+import Header from "./components/Header/Header"; 
 import Home from   "./components/pages/Home/Home"; 
 import About from "./components/pages/About/About";
 import Logement from "./components/pages/Logement/Fiche"; 
 import ErrorPage from "./components/pages/ErrorPage/Error404";
-//import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-   
-     <>
+    <>
+
+     
             {/*  Listes des routes */}  
         <BrowserRouter>
-          
+        <Header />
+        <main>
+
            <Routes>
             
             <Route path="/"> 
@@ -27,9 +30,11 @@ function App() {
             </Route> 
 
           </Routes>
-         
+          </main>
+          <Footer />
         </BrowserRouter> 
         
+     
       </>
    
   );

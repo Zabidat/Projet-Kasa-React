@@ -1,7 +1,7 @@
 {
   "name": "project-kasa",
   "version": "0.1.0",
-  "homepage": "https://Zabidat.github.io/Projet-Kasa-React",
+  "homepage": "https://Zabidat.github.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -12,6 +12,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
+    "sass": "^1.77.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

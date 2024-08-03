@@ -1,8 +1,26 @@
+import Banner from "../../Banner/Banner"; 
+import imageAboutBanner from "../../../assets/banner/AboutBanner.png"; 
+import collapseData from "../../../datas/collapse.json"; 
+import Collapse  from "../../Collapse/Collapse";
+
+
 function About ()
 {
     return (
-        <div>
-            <h1>A propos</h1>
+        <div className="about">
+           <div className="about_container">
+                <Banner Texte="" image={imageAboutBanner} bannerclass="banner-container_imgP"/>
+                <div className="about_collapse">
+                    {collapseData.map((option) => (
+                        
+                        <Collapse
+                            title={option.title}
+                            content={option.content} 
+                        />
+
+                    ))}
+                </div>
+           </div>
         </div>
     )
 }
