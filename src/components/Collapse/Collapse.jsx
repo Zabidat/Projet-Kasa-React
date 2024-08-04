@@ -2,7 +2,6 @@ import { useState } from "react";
 import ImageVectorUp from "../../assets/collapse/Vector-Up.svg";
 
 
-
 function Collapse (props){
     // Les paramètres title et content en props sont recupéres depuis le composant About. 
     const {title, content} = props

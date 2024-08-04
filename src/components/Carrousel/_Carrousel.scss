@@ -27,7 +27,7 @@
         @include big-radius;
     }
 
-    &img { 
+    &_img { 
         @include WH-full;
         object-fit: cover;
         /* Absolute : doit être placé sur l'élément parent */ 
@@ -47,16 +47,14 @@
     }
 
     &_number {
-        display: none;
-
-        @media screen and (min-width: $breakpoint-desktop) {
-            display: block;
-            position: absolute;
-            @include font(18px, 500);
-            color: $tertiary-color;
-            left: 48%;
-            top: 86%;
-        }
+        
+        display: block;
+        position: absolute;
+        @include font(18px, 500);
+        color: $tertiary-color;
+        left: 48%;
+        top: 86%;
+       
     }
 }
 

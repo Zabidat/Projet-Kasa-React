@@ -4,10 +4,9 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from "./components/Header/Header"; 
 import Home from   "./components/pages/Home/Home"; 
 import About from "./components/pages/About/About";
-import Logement from "./components/pages/Logement/Fiche"; 
 import ErrorPage from "./components/pages/ErrorPage/Error404";
 import Footer from "./components/Footer/Footer";
-
+import Fiche from "./components/pages/Logement/Fiche";
 function App() {
   return (
     <>
@@ -24,7 +23,9 @@ function App() {
 
               <Route  index element={<Home />} />
               <Route path="about" element= {<About/>} /> 
-              <Route path="logement" element= {<Logement/>} />
+              {/* /: id est une route specifique qu on recupere dans le fiche de logement
+               pour afficher les informations correspondantes */}
+              <Route path="logement/:id" element= {<Fiche/>} />  
               <Route path="*" element={<ErrorPage />}/>
               
             </Route> 

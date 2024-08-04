@@ -1,85 +1,53 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import LeftArrow from "../../assets/carrousel/flèche-left.png";  
 import rightArrow from "../../assets/carrousel/flèche-right.png"; 
 
 function Carrousel (props) {
 
-    const {image, index} = props 
+    // Recuperer la liste du tableau d'image 
+    const {images} = props;
 
-    // Création du Hook d'état dont je définie l'index (variable initiale=current) du premier slide à 0
-    const [current, setCurrent] = useState(0); 
+    // Suivre l'etat de la position(index est un nombre) de l'image
+    const [currentIndex, setCurrentIndex] = useState (0); 
 
-    // Définition du longeur du tableau de slides
-    const length = props.length; 
+    // Suivre l'etat du chemin de l'image (recupere l URl correspondant)
+    const [currentImage, setCurrentImage] = useState(images[currentIndex]);
 
-    // Function qui change la valeur de notre paramètre current pour l'image précédente
-    const nextImage = () => {
-        // On repart au première image quand on arrive au dernière.
-        setCurrent(current === length -1 ? 0 : current +1); 
-    };
+    // Changer L'etat de l'image(ou chemin d'image) à chaque fois que le currentIndex change 
+    //(currentIndex change, on appelle useEffect)
+    useEffect (() => { 
+        setCurrentImage (images[currentIndex]);
 
-    const prevImage = () => {
-        // On repart au dernière image quand on est première.
-        setCurrent (current === 0 ? -1 : current -1); 
+         // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentIndex])
+
+    // Aller à la position de l'image suivante
+    const nextImages = () => {
+        // Arriver au dernière image, on retourne a la première image
+        setCurrentIndex(currentIndex === (images.length -1 )? 0 : currentIndex + 1);
     }
-    
-    if (!Array.isArray(props) || props.length <= 0) {
-        // si l'objet en argument n'est pas un tableau alors la méthode renvoie false. 
-        return null; 
+
+    //Aller à la position de l'image précédente
+    const prevImages = () => {
+        // si on est à la première image, on retourne a la dernière image, sinon on affiche image précédente
+        setCurrentIndex(currentIndex === 0 ? (images.length - 1) : currentIndex -1); 
     }
 
     return (
+        <div className="container-carrousel">
+           <div className="slider  active-animation"> 
+                <img src ={currentImage} alt="slide carrousel" className="slider_img"/>
+             
+                {/* si la taille totale de l'image est >1, 
+                on affiche les fleches et numerotations, sinon on affiche rien cad c'est < ou = 1 */}
+ 
+                {images.length > 1 ? <span onClick={prevImages}><img src = {LeftArrow} alt="leftArrow" className="left-Arrow "/></span> : <></>} 
+                {images.length > 1 ? <span onClick={nextImages}><img  src= {rightArrow} alt="rightArrow" className="right-Arrow" /></span> : <></>}
+                {images.length > 1 ? <span className="slider_number">{`${currentIndex +1}/${images.length}`}</span> :<></>}
 
-        <section className="container-carrousel">
-            {
-                length > 1 && (
+           </div>
 
-                    <img 
-                        src = {LeftArrow}
-                        alt = "Flèche gauche"
-                        onClick={prevImage}
-                        className="left-Arrow"
-                    />
-            )}
-
-            {
-                length > 1 && (
-                        
-                    <img 
-
-                        src ={rightArrow}
-                        alt = "Flèche droite"
-                        onClick={nextImage}
-                        className="right-Arrow" 
-
-                    />
-            )}
-
-            {props.map((image, index) => (
-
-                <div
-                    //Mise en place du slider avec une affichage conditionnelle et transparence =1 si l'image en cours est égale a l'index. 
-
-                    key={index}
-                    className= {index === current ? "slider active-animation" : "slider"}
-                >
-                    {
-                        index === current && <img src={image} alt="Appartement à louer"/> 
-                    }
-
-                    {
-                        index === current && (
-                        <span className="slider_number">
-                             {current + 1}/{length} 
-                        </span> 
-                    )}
-
-                </div> 
-
-                    
-            ))}
-
-        </section>
+        </div>
     )
 
 

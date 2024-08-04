@@ -25,7 +25,8 @@
 		}   
 	
 		h2 {
-			@include font(13px, 500);             // Utilisation de mixin dans notre code
+			// Utilisation de mixin dans notre code
+			@include font(13px, 500);             
 
 			@media screen and (min-width: $breakpoint-desktop) {
 				@include font(24px, 500);

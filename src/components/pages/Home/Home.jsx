@@ -15,13 +15,17 @@ function Home () {
                     <Banner Texte="Chez vous, partout et ailleurs" image={imgHomeBanner} bannerclass="banner-container_imgHome" />  
                
                     <div className="Card-Container">
-                    { /* Géneration de la listes de Cards de logements: map. va parcourir le tableau et nous retourner une liste de cards de logements */ } 
+
+                    { /* Géneration de la liste de Cards de logements: map. va parcourir chaque element du tableau 
+                    et nous retourner une liste de cards de logements */ } 
                         {logements.map((logement) => (
-                               
+
+                            /* la prop Key identifie chaque élément du tableau par son id, 
+                            cad pour dire que chaque element est different de l'autre */ 
                             <article key={logement.id}>   
                             
-                                {/* la prop Key va identifier les éléments par leur id et nous retourner une chaine de caractère */}
-
+                                {/* Grace a 'to'on definit une route specifique pour acceder a fiche de logement 
+                                et l'id nous affichera les informations de l'element correspondant*/} 
                                 <Link className="link-cardLogement" to ={`/logement/${logement.id}`}> 
                                     <Cards cover={logement.cover} title={logement.title}/>               
                                 </Link>
