@@ -12,27 +12,28 @@ import { Navigate } from "react-router-dom";
 // Au click d'un appartement, on fait appelle à ce composant qui affiche le carrousel ainsi que les informations nécessaires du logement.  
 function Fiche(){
 
-   //Récupèrer l'id de logement correspondant (id de l'element cliqué)
+   //Récupèrer l'id de logement correspondant (id de l'element envoyé par Home page)
     const {id} = useParams(); 
 
-    // Récupère les informations totales du logement cliquer ou correspondant (null= la variable ne contient rien,ou on a encore rien fait)
+    // Récupère les informations totales du logement actuel, lui même, correspondant ou id envoyé par Home Page,
+    //ON a initialisé la valeur à Null car on ne sait pas ce qu il contient(Pour identifier si le Résultat est disponible ou pas dans la base Data).
     const [logement, setLogement] = useState(null);
 
-    //Suivre l'etat de disponibilite de la reponse de UseEffect
+    //Suivre l'état de disponibilite de la reponse de UseEffect (Savoir si le Résultat est disponible)
     const [isstate, SetState] = useState(false);
 
     // Mise à jour des informations de logement via useEffect
     // eslint-disable-next-line 
     useEffect (() =>
     {
-        //Function find (avec x correspond à l'élément de l'objet,find itère sur chaque élément de l'objet et dès qu'il trouve l'id correspondant, il s'arrête)
-        //Et compare id cliqué à chaque id du logement Data,et nous retourne un objet 
+        //Function find (avec x correspond à l'élément du tableau,find itère sur chaque élément de l'objet et dès qu'il trouve l'id correspondant, il s'arrête)
+        //Et compare id cliqué à chaque id du logement Data,et nous retourne l'élément du tableau qui un objet 
         //Contenant l'élément qui corresponde à l'id récupérer de useParams 
-        // SetLogement prends la reponse du find et fait un mise à jour du logement
+        // SetLogement prends la reponse du find et fait un mise à jour de la valeur du logement
 
         setLogement(logements.find((x)=> id===x.id));
 
-        //Si la response est disponible 
+        //Si la response est disponible (Donc sa valeur est différent de null)
         if(logement !== null )
         {
             SetState(true)
@@ -43,12 +44,12 @@ function Fiche(){
     return (
 
        
-        //On vérifie si le réponse du find est disponible(logement est # de null)
+        //On vérifie si la réponse du find est disponible(logement est # de null) et si le logement est trouvé (!=undefined)
       isstate && (  logement !==undefined ? <div className="container-fiche">
 
 
            {
-            //logement correspond au reponse de find qui est un objet, et il ne peut y avoir qu'un seul élément car id est unique
+            //logement correspond au reponse de find l'élément du tableau qui est un objet, et il ne peut y avoir qu'un seul élément car id est unique
             //On test si le pictures est un tableau et on affiche le CARROUSEL qui prend comme argument en entrée un tableau.
             Array.isArray (logement.pictures) && <Carrousel  images= {logement.pictures}/>
             }
