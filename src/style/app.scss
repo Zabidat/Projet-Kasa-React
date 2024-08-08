@@ -5,7 +5,6 @@
 @import "../style/Base/base"; 
 
 @import "../components/Header/Header";
-@import "../components/pages/Home/Home"; 
 @import "../components/pages/About/About";
 @import "../components/pages/Logement/Fiche";
 @import "../components/pages/ErrorPage/Error404"; 
@@ -14,4 +13,6 @@
 @import "../components/Banner/Banner";
 @import "../components/Cards/Cards";
 @import "../components/Carrousel/Carrousel";
+@import "../components/Tags/Tags"; 
+@import "../components/Host/Host"; 
 @import "../components/Collapse/Collapse"; 

@@ -40,32 +40,47 @@
 		width: 9px; 
 	}   
     
-	&_content {
+	&_content,
+	&_equipement {
 		background: $secondary-color;
 		border-radius: 5px;
 		transition: opacity 0.4s ease-in-out, height 0.4s 0.4s ease-in-out;
+		padding: 9px;
+		
+		@include font(10px, 400); 
+
+		@media screen and (min-width: $breakpoint-desktop) {
+			@include font(20px, 400);
+		}  
 
 		p { 
-			margin: 0;
-			padding: 22px 15px;
+			padding:9px 12px 9px 12px; 
+			//L'élément ne réagira pas aux événements du pointeur
+			pointer-events: none;
+			//L'animation se déclenchera au chargement de l'élément.
+			animation: slide-in 400ms; 
+			// Animation du paragraphe
+			opacity: 1;
+			transition: height 0.4s ease-in-out, opacity 0.4s 0.4s ease-in-out; 
+			display: flex;
+			justify-content: center; 
+
+			
+		}
+
+		// About listes Equipements 
+		& li {
+			list-style-type: none; 
 			pointer-events: none;
 			// L'animation se déclenchera au chargement de l'élément.
 			animation: slide-in 400ms; 
 			// Animation du paragraphe
 			opacity: 1;
 			transition: height 0.4s ease-in-out, opacity 0.4s 0.4s ease-in-out; 
-			@include font(12px, 400); 
-
-			@media screen and (min-width: $breakpoint-desktop) {
-				@include font(24px, 400);
-			}
+			
 		}
 
-		
 	}
-
-	
-
 } 
 
 
@@ -105,6 +120,3 @@ slide-in est la variable qui prend l'etat de la translation (from=start et to=à
 	width: 85%;
 	margin: auto; 
 }
-
-
-

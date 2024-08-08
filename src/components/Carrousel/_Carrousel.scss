@@ -30,7 +30,7 @@
     &_img { 
         @include WH-full;
         object-fit: cover;
-        /* Absolute : doit être placé sur l'élément parent */ 
+        /*Absolute : doit être placé sur l'élément parent */ 
         position: absolute;
         left: 0%;
         right: 0%;

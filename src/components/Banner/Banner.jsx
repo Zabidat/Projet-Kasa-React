@@ -1,4 +1,5 @@
-function Banner (props)   // Composant réutilisable grâce aux props
+function Banner (props)   // Prends comme argument en entrée Props 
+//et les valeurs de image, Texte et bannerclasssont récuperées dans Home component pour afficher notre bannière
 {
     const {image, Texte,bannerclass} = props
     return (

@@ -1,0 +1,68 @@
+.host-container {
+	@include flex-end;
+	width: 100%;
+}
+
+.host-picture {
+    //Pour faire le profil rond 
+	display: flex;
+	margin-left: 10px;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: #c4c4c4;
+
+	@media screen and (min-width: $breakpoint-desktop) {
+		width: 64px;
+		height: 64px;
+	}
+
+	&_img {
+		@include WH-full;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+}
+
+.host-name {
+    color: $primary-color; 
+	@include flex-end;
+	width: 63px;
+	height: 66px;
+	text-align: right;
+	@include font(12px, 500);
+
+	@media screen and (min-width: $breakpoint-desktop) {
+		@include font(18px, 500);
+
+	}
+}
+
+
+
+
+
+/*
+.rate-host-container {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+
+	@media screen and (min-width: $breakpoint-desktop) {
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+.hostInfo-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: space-between;
+
+	@media screen and (min-width: $breakpoint-desktop) {
+		flex-direction: row;
+		align-items: flex-end;
+	}
+}
+*/ 

@@ -1,0 +1,83 @@
+.container-children {
+   display: flex;
+   flex-direction: row; 
+   justify-content: space-between;
+   margin-top: 15px;
+
+
+   @media screen and (max-width: $breakpoint-desktop) {
+		flex-direction: column; 
+	}  
+
+}
+
+.container-collapse {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;   
+
+   @media screen and (max-width: $breakpoint-desktop) {
+		flex-direction: column;
+      display: inline; 
+	}  
+    
+}
+
+.container-TagsTitle {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   @media screen and (max-width: $breakpoint-desktop) {
+		flex-direction: column;
+	}  
+    
+}
+
+.container-host-rate {
+   display: flex;
+   flex-direction: column;
+
+   @media screen and (max-width: $breakpoint-desktop) {
+		flex-direction: row-reverse; 
+      justify-content: space-between;
+      margin-top: 0px; 
+	}  
+}
+
+.w-30
+{
+   width: 45%;
+
+   @media screen and (max-width: $breakpoint-desktop) {
+      width: 100%;
+	} 
+
+}
+
+.mg-20
+{
+  margin-top: 20px;
+
+  &_rate-content {
+   width: 12px;
+   height: 12px;
+
+   @media screen and (min-width: $breakpoint-desktop){
+      width: 25px;
+      height: 25px;
+   } 
+  }
+}
+
+
+//Pour les Rating
+.rate-content {
+   width: 12px;
+   height: 12px;
+
+   @media screen and (min-width: $breakpoint-desktop){
+      width: 25px;
+      height: 25px;
+   }
+}

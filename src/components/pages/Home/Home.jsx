@@ -21,10 +21,10 @@ function Home () {
                         {logements.map((logement) => (
 
                             /* la prop Key identifie chaque élément du tableau par son id, 
-                            cad pour dire que chaque element est different de l'autre */ 
+                            cad pour dire que chaque élément est différent de l'autre */ 
                             <article key={logement.id}>   
                             
-                                {/* Grace a 'to'on definit une route specifique pour acceder a fiche de logement 
+                                {/* Grâce à 'to'on définit une route spécifique pour accéder au fiche de logement au clic
                                 et l'id nous affichera les informations de l'element correspondant*/} 
                                 <Link className="link-cardLogement" to ={`/logement/${logement.id}`}> 
                                     <Cards cover={logement.cover} title={logement.title}/>               

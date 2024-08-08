@@ -2,7 +2,7 @@ import { useState } from "react";
 import ImageVectorUp from "../../assets/collapse/Vector-Up.svg";
 
 
-function Collapse (props){
+function Collapselist (props){
     // Les paramètres title et content en props sont recupéres depuis le composant About. 
     const {title, content} = props
 
@@ -31,15 +31,20 @@ function Collapse (props){
                 
             </div>
 
-           
-            {/* Si le Collapse est a True alors la description sera affichée */}
-            {isOpen &&  <div className="collapse_content"> <p>{content}</p> </div>} 
-            
-        </div>
-
-       
+                 {isOpen && 
+                         <div className="collapse_equipement"> 
+                            {/* Si le Collapse est a True alors la liste des equipements sera affichée */}
+                            <ul className="collapse_equipement"> {content.map((text)=>(
+                                
+                                <li>{text}</li>
+                            ))} 
+                        </ul>
+                    </div>
+                 }
+                
+            </div>
 
     )
 
 }
-export default Collapse 
+export default Collapselist

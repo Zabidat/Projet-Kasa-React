@@ -1,4 +1,5 @@
-/* Grâce à ce fichier mixins, on aura des variables qui engloberont plusieurs propriétées*/ 
+/* Grâce à ce fichier mixins, on aura des variables qui engloberont plusieurs propriétées 
+ Ou stocke des blocs entier de code*/ 
 
 @mixin body-position {
     margin: auto; 
@@ -80,7 +81,7 @@
     display: flex;
     position: absolute;
     font-size: 1.4rem;
-    top: 42%;
+    top: 47%;
     left: 2%;
     height: 20px;
     width: 12px;

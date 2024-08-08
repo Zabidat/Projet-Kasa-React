@@ -7,36 +7,41 @@ import About from "./components/pages/About/About";
 import ErrorPage from "./components/pages/ErrorPage/Error404";
 import Footer from "./components/Footer/Footer";
 import Fiche from "./components/pages/Logement/Fiche";
+
 function App() {
   return (
     <>
 
      
-            {/*  Listes des routes */}  
-        <BrowserRouter>
-        <Header />
+      {/*  Listes des routes */}  
+      <BrowserRouter>
+
+        <Header /> 
         <main>
 
-           <Routes>
-            
+          <Routes> 
+            {/* Contient toutes les routes configurés dans le site*/}
+
             <Route path="/"> 
 
               <Route  index element={<Home />} />
               <Route path="about" element= {<About/>} /> 
-              {/* /: id est une route specifique qu on recupere dans le fiche de logement
+              {/* /: id est une route spécifique qu'on récupère dans le fiche de logement
                pour afficher les informations correspondantes */}
               <Route path="logement/:id" element= {<Fiche/>} />  
               <Route path="*" element={<ErrorPage />}/>
               
             </Route> 
 
-          </Routes>
-          </main>
-          <Footer />
-        </BrowserRouter> 
+          </Routes> 
+
+        </main>
+        <Footer />
+
+      </BrowserRouter> 
         
      
-      </>
+     </>
    
   );
 

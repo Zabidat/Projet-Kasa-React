@@ -1,7 +1,7 @@
 function Cards(props) 
 {
-    // Les paramètres cover,title qui récupèrent l'image de couverture et titres en props depuis le composant Home. 
-    
+    // Les paramètres cover,title qui récupèrent l'image de couverture et titres de chaque logement en props
+    //Depuis le composant Home, Pour afficher les cards
     const {cover,title} = props
    
     return (

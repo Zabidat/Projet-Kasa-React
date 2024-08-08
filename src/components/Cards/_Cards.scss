@@ -5,7 +5,8 @@
     position: relative;
     margin-bottom: 20px;
     border-radius: 10px;
-    animation: fadeInUp 600ms ease-in-out; // (ease-in-out:  spécifie un effet de transition avec un début et une fin lents). 
+    // (ease-in-out:  spécifie un effet de transition avec un début et une fin lents). 
+    animation: fadeInUp 600ms ease-in-out;  
     overflow: hidden; 
 
     &_img {
@@ -13,8 +14,10 @@
       height: inherit;
       object-fit: cover;
       border-radius: inherit;
-      transform: scale(1);             // applique une transformation à notre image à une échelle de 1. 
-      transition: transform 300ms;    //Ajoute une effet de transition à la transformation de 300ms.
+      // applique une transformation à notre image à une échelle de 1. 
+      transform: scale(1); 
+      //Ajoute une effet de transition à la transformation de 300ms.            
+      transition: transform 300ms;    
     } 
 
     &_title {
@@ -62,8 +65,10 @@ fadeInup est la variable qui prend l'etat de la translation (from=start et to=à
 
     @include media-query(medium) {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);       // on crée une grille avec une première colonne répétant 2 fois une piste de 1fr (fraction de lèespace disponible dans le conteneur).
-        column-gap: 40px;                           // spécifie l'espacement entre les colonnes 
+        // on crée une grille avec une première colonne répétant 2 fois une piste de 1fr (fraction de lèespace disponible dans le conteneur).
+        grid-template-columns: repeat(2, 1fr);  
+        // spécifie l'espacement entre les colonnes       
+        column-gap: 40px;                           
         row-gap: 20px;
         margin-top: 40px;
       }

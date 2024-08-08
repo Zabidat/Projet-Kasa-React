@@ -11,10 +11,11 @@ function About ()
            <div className="about_container">
                 <Banner Texte="" image={imageAboutBanner} bannerclass="banner-container_imgP"/>
                 <div className="about_collapse">
-                    {collapseData.map((option) => ( 
+                    {collapseData.map((option,index) => ( 
                         //l'argument option represente chaque element du tableau collapse qui est objet
                         
                         <Collapse
+                            key ={index}
                             title={option.title}
                             content={option.content} 
                         />
