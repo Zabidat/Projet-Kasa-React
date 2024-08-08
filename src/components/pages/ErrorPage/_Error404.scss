@@ -23,6 +23,7 @@
 }
 
 .error-text {
+  //@extend veut dire que error-text aura les propriétés de flex-containerError(partage les propriétés CSS d'un selecteur à un autre)
   @extend %flex-containerError;
   text-align: center;
   @include font (16px, 500); 
