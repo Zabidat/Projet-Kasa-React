@@ -23,10 +23,11 @@ function App() {
             {/* Contient toutes les routes configurés dans le site*/}
 
             <Route path="/"> 
+            {/* Chemin en première et les autres vont le suivre */} 
 
               <Route  index element={<Home />} />
               <Route path="about" element= {<About/>} /> 
-              {/* /: id est une route spécifique qu'on récupère dans le fiche de logement
+              {/* /: id est une route spécifique qui prend comme paramètre id(qu'on récupère dans le fiche de logement)
                pour afficher les informations correspondantes */}
               <Route path="logement/:id" element= {<Fiche/>} />  
               <Route path="*" element={<ErrorPage />}/>
