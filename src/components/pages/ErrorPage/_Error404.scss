@@ -16,6 +16,7 @@
   }
 }
 
+// Definition de propriété @exten en scss(partage les propriétés CSS d'un selecteur à un autre)
 %flex-containerError {
   display: flex;
   align-items: flex-end;
